@@ -1,0 +1,29 @@
+<table>
+  <tr>
+    <td>
+      <div id="tabsPanel">
+
+
+        <!--<ul class="tabs">-->
+          <!--<li *ngFor="let t of tabs"-->
+              <!--[class.selected]="t === selectedTabs"-->
+              <!--(click)="onSelect(t)">-->
+            <!--<span class="badge">{{t.name}}</span>-->
+          <!--</li>-->
+        <!--</ul>-->
+        <ul class="tabs">
+          <li *ngFor="let tab of tabs">
+            <a routerLink="/detail/{{tab.id}}">
+              <span class="badge">{{tab.id}}</span> {{tab.name}}
+            </a>
+          </li>
+        </ul>
+
+
+      </div>
+    </td>
+    <td style="width: 1500px ">
+      <!--<app-main-page [tabs]="selectedTabs"></app-main-page>-->
+    </td>
+  </tr>
+</table>
