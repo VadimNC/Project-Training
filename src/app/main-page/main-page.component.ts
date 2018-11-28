@@ -1,36 +1,20 @@
 import {Component, Input, OnInit} from '@angular/core';
-import {Tabs} from '../tabs-panel/tabs';
-import {ActivatedRoute} from '@angular/router';
-import {Location} from '@angular/common';
-
-import {OrdersService} from '../orders.service';
-import {Observable, of} from 'rxjs/index';
-import {TABS} from '../tabs-panel/mock-tabs';
+import {OrderService} from '../order.service';
+import {Order} from '../order';
 
 @Component({
   selector: 'app-main-page',
   templateUrl: './main-page.component.html',
-  styleUrls: ['./main-page.component.css']
+  styleUrls: ['./main-page.component.css'],
+  providers: [OrderService]
 })
 export class MainPageComponent implements OnInit {
-  public tab: Tabs;
+  items: Order[] = [];
 
-  constructor(private route: ActivatedRoute,
-              private ordersService: OrdersService,
-              private location: Location) {
+  constructor(private orderService: OrderService) {
   }
 
   ngOnInit() {
-    this.getTab();
+    this.items = this.orderService.getAllUserOrders();
   }
-
-  // getTab(): Observable<Tabs[]> {
-  //   return of(TABS);
-  // }
-
-  getTab(): void {
-    const id = +this.route.snapshot.paramMap.get('id');
-    this.ordersService.getTab(id).subscribe(tab => this.tab = tab);
-  }
-
 }

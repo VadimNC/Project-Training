@@ -1,31 +1,26 @@
-<div id="appComp">
+<!DOCTYPE html>
+<header>
+  <app-header></app-header>
+</header>
+<main>
+  <nav>
+    <div class="collection">
+      <ul>
+        <li><a routerLink="/my-orders" class="collection-item">My Orders</a></li>
+        <li><a routerLink="/second" class="collection-item">Page 2</a></li>
+        <li><a routerLink="/third" class="collection-item">Page 3</a></li>
+        <li><a routerLink="/fourth" class="collection-item">Page 4</a></li>
+        <li><a routerLink="/fifth" class="collection-item">Page 5</a></li>
+      </ul>
+    </div>
+  </nav>
+</main>
+  <article>
+    <router-outlet></router-outlet>
+    <!--<app-main-page></app-main-page>-->
+  </article>
 
+<footer>
+  <app-footer></app-footer>
+</footer>
 
-  <table>
-    <tr>
-      <td colspan="2">
-        <app-header></app-header>
-      </td>
-    </tr>
-    <tr>
-      <td width="30%">
-        <nav>
-          <a routerLink="/heroes">My List Tabs:</a>
-        </nav>
-        <app-tabs-panel></app-tabs-panel>
-      </td>
-      <td width="70%">
-        <!--<app-main-page [tabsS]="selectedTabs"></app-main-page>-->
-      </td>
-    </tr>
-    <tr>
-      <td colspan="2">
-        <app-footer></app-footer>
-      </td>
-    </tr>
-
-  </table>
-
-</div>
-
-<router-outlet></router-outlet>

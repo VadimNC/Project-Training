@@ -8,6 +8,7 @@ import {HeaderComponent} from './header/header.component';
 import {TabsPanelComponent} from './tabs-panel/tabs-panel.component';
 import {MainPageComponent} from './main-page/main-page.component';
 import {FormsModule} from '@angular/forms';
+import {NgxPaginationModule} from 'ngx-pagination';
 
 @NgModule({
   declarations: [
@@ -20,7 +21,8 @@ import {FormsModule} from '@angular/forms';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    FormsModule
+    FormsModule,
+    NgxPaginationModule
   ],
   providers: [],
   bootstrap: [AppComponent]

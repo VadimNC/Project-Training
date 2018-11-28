@@ -1,6 +1,7 @@
-#main {
+#mainArea {
   text-align: center;
-  border-style: solid;
+  /*border-style: solid;*/
   border-color: chocolate;
   height: 500px;
+  background-color: #ee6e73;
 }

@@ -1,13 +1,24 @@
-<div id="main">
-  <div *ngIf="tab">
+<div>
+  <div class="panel">
 
-    <h2>{{tab.name | uppercase}} Details</h2>
-    <div><span>id: </span>{{tab.id}}</div>
-    <div>
-      <label>name:
-        <input [(ngModel)]="tab.name" placeholder="name"/>
-      </label>
-    </div>
-
+    <table class="table table-striped">
+      <thead>
+      <tr>
+        <th>Id</th>
+        <th>Status</th>
+        <th>Created When</th>
+        <th>Comments</th>
+      </tr>
+      </thead>
+      <tbody>
+      <tr *ngFor="let item of items | paginate: {itemsPerPage:7, currentPage: p}">
+        <td>{{item.id}}</td>
+        <td>{{item.status}}</td>
+        <td>{{item.createdWhen}}</td>
+        <td><textarea rows="1" cols="40"> {{item.comments}} </textarea></td>
+      </tr>
+      </tbody>
+    </table>
   </div>
+  <pagination-controls (pageChange)="p =$event"></pagination-controls>
 </div>
